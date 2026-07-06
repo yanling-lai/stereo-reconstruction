@@ -1,5 +1,5 @@
 # stereo-reconstruction
-This is an ongoing C++ implementation of stereo matching methods.
+This is a C++ implementation of stereo matching methods.
 
 The program takes a pair of calibrated stereo images as input and returns their disparity map. We provide two different methods: naive matching [1] and PatchMatch Stereo [2].
 
