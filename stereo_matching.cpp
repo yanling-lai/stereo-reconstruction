@@ -1,5 +1,18 @@
 #include "stereo_matching.h"
-#include <opencv2/core/mat.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <cstdlib>
+#include <random>
+#include <vector>
+#include <utility>
+#include <string>
+
+double clr_thresh{10.0};
+double grd_thresh{2.0};
+double Gamma{10.0};
+double Alpha{0.9};
 
 cv::Mat NaiveSearch::operator() (cv::Mat img1, cv::Mat img2) {
     

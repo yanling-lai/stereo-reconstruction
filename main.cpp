@@ -46,8 +46,9 @@ int main(int argc, char** argv) {
             return -1;
         }
     } else if (MatchingMethod == "PatchMatchStereo") {
+        int nbh_size = 2;
         auto run_start = std::chrono::high_resolution_clock::now();
-        if (PairContainer->GetDisparity(new PatchMatch(max_disparity, window_size))) {
+        if (PairContainer->GetDisparity(new PatchMatch(max_disparity, window_size, nbh_size))) {
             auto run_stop = std::chrono::high_resolution_clock::now();
             std::cout << "The Naive Search Function took " << std::chrono::duration_cast<std::chrono::seconds>(run_stop - run_start).count() << "second to completion." << std::endl;
             cv::imwrite(DataDir + "disparity.png", PairContainer->Disparity);

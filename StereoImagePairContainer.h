@@ -25,8 +25,8 @@ public:
 
             SingleFrame *e = Frames.at(i);
 
-            if (e->frame.empty() == false) {
-                e->frame.release();
+            if (e->Frame.empty() == false) {
+                e->Frame.release();
             }
             delete e;
         }
@@ -64,12 +64,12 @@ public:
         }
         return true;
     }
+    cv::Mat Disparity;
 
 private:
 
     std::vector<SingleFrame *> Frames; // Vector of stereo frames.
     std::string DataDir; // Directory to stereo image data.
     std::vector<std::string> PairNames; // Vector of frame names.
-    cv::Mat Disparity;
 
 };
